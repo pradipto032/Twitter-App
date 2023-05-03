@@ -1,0 +1,133 @@
+<!-- <div>
+  <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+  <form>
+    <fieldset>
+      <div>
+        <label for="uname">Enter Username:</label>
+        <input type="text" [(ngModel)]="user.uname" name="name" id="name" placeholder="Enter username" required>
+      </div>
+      <div>
+        <label for="email">Enter Email:</label>
+        <input type="text" [(ngModel)]="user.email" name="email" id="email" placeholder="Enter user email" required>
+      </div>
+      <div>
+        <label for="fname">Enter fname:</label>
+        <input type="text" [(ngModel)]="user.firstName" name="fname" id="fname" placeholder="Enter user first name" required>
+      </div>
+      <div>
+        <label for="lname">Enter lname:</label>
+        <input type="text" [(ngModel)]="user.lastName" name="lname" id="lname" placeholder="Enter user last name" required>
+      </div>
+      <div>
+        <label for="pass">Enter password:</label>
+        <input type="text" [(ngModel)]="user.password" name="pass" id="pass" placeholder="Enter user password" required>
+      </div>
+      <div>
+        <label for="contact">Enter contact:</label>
+        <input type="text" [(ngModel)]="user.contactNumber" name="name" id="contact" placeholder="Enter user contact" required>
+      </div>
+      <div>
+        <input type="button" class="submit" value="Register" (click)="registernow()">
+      </div>
+  </fieldset>
+  </form>
+</div> -->
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card bg-dark text-white shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register your account!!!</h3>
+
+              <p class="text-white-50 mb-2">{{warnmsg}} {{message}}</p>
+
+              <form>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" [(ngModel)]="user.firstName" name="fname" id="fname" class="form-control form-control-lg" placeholder="First Name"/>
+                    <!-- <div *ngIf="registerForm.controls.firstName.errors.required">First Name is required</div> -->
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" [(ngModel)]="user.lastName" [ngModelOptions]="{standalone: true}" name="lname" id="lname" class="form-control form-control-lg" placeholder="Last Name"/>
+                    <!-- <label class="form-label" for="lastName">Last Name</label> -->
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" [(ngModel)]="user.uname" name="uname" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg" id="uname" placeholder="Username"/>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+
+                  <div class="form-outline">
+                    <input [(ngModel)]="user.password" name="pass" type="password" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg" id="pass" placeholder="Create Password"/>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" [(ngModel)]="cpassword" name="pass1" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg" id="pass1" placeholder="Confirm Password"/>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-2">
+
+                  <div class="form-outline">
+                    <input type="email" [(ngModel)]="user.email" id="email" [ngModelOptions]="{standalone: true}" class="form-control form-control-lg" placeholder="Email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/>
+                    <!-- <label class="form-label" for="emailAddress">Email</label> -->
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-2">
+
+                  <div class="form-outline">
+                    <input type="text" [(ngModel)]="user.contactNumber" name="contact" [ngModelOptions]="{standalone: true}" id="contact" maxlength="10" class="form-control form-control-lg" placeholder="Contact Number" pattern="^[0-9]{10}$"/>
+                    <!-- <label class="form-label" for="phoneNumber">Phone Number</label> -->
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="mt-4 mb-2 pt-2">
+                <input class="btn btn-outline-light btn-lg px-5" type="submit" (click)="registernow()" value="Create Account">
+              </div>
+
+            </form>
+              <div>
+                <p class="mb-0">Already have account? <a routerLink="/tweets/login" class="text-white-50 fw-bold">Login</a>
+                </p>
+              </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" /> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<body class="bg-gradient-to-b">
+<div class="container">
+      <br>
+      <div *ngFor="let a of tw">
+        <div class="card text-left">
+          <div class="card-header">
+            <p class="fw-bold mb-2 text-left"><i>@{{a.uname}}</i>
+              <span style="float:right;"><button type="button" *ngIf="this.uname === a.uname" class="btn btn-sm" (click)="deleteT(a.tid)"><span *ngIf="this.uname === a.uname" class="glyphicon glyphicon-trash"></span></button></span>
+            </p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{a.tweet}}</h5>
+            <br>
+            <button type="button" class="btn btn-sm" (click)="replyT(a.tid)"><span class="glyphicon glyphicon-comment"></span></button>
+            <button type="button" *ngIf="this.uname === a.uname" class="btn btn-sm" (click)="updateT(a.tid)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-heart"></span></button>
+          </div>
+          <div class="card-footer text-muted">{{a.date | date : 'dd MMM yyyy, h:mm a'}}</div>
+        </div>
+        <br>
+
+    </div>
+</div>
+
+</body>
+

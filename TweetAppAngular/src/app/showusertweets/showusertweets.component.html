@@ -1,0 +1,39 @@
+<app-header></app-header>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<section class="vh gradient-custom">
+<div class="container2">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-4 mt-md-4 pb-2">
+
+              <h2 class="fw-bold mb-2 text-left">@<i>{{us.uname}}</i></h2>
+              <div>
+                <h4 class="fw-bold mb-2 text-left"><small>Name:</small> {{us.firstName}} {{us.lastName}}</h4>
+                <h4 class="fw-bold mb-2 text-left"><small>Email:</small> {{us.email}}</h4>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      <br>
+      <div class="container1" *ngFor="let a of tw">
+        <div class="card text-left">
+          <div class="card-header">
+            <p class="fw-bold mb-2 text-left"><i>@{{a.uname}}</i></p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{a.tweet}}</h5>
+            <br>
+            <button type="button" class="btn btn-sm" (click)="replyT(a.tid)"><span class="glyphicon glyphicon-comment"></span></button>
+            <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-heart"></span></button>
+          </div>
+          <div class="card-footer text-muted">{{a.date | date : 'dd MMM yyyy, h:mm a'}}</div>
+        </div>
+        <br>
+
+    </div>
+</div>
+</section>
+</body>

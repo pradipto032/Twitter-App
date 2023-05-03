@@ -1,0 +1,25 @@
+<app-header></app-header>
+<!-- <p>{{ message }}</p>
+<p>{{ tw }}</p>
+<textarea rows="4" cols="50" [(ngModel)]="msg">{{ msg }}</textarea>
+<input type="button" (click)="updateT()" value="Post" /> -->
+
+<div class="container2">
+  <div class="align-items-center vh-100 bg-dark text-white">
+    <div class="card-body p-5 text-center">
+
+      <div class=" mb-md-4 mt-md-4 pb-2">
+
+        <h2 class="fw-bold mb-2 text-left">&nbsp;</h2>
+        <p class="text-white-50 mb-2">{{message}}</p>
+        <div>
+          <textarea type="text" [(ngModel)]="msg" name="tweet" class="form-control form-control-lg" id="tweet" required></textarea>
+        </div>
+      </div>
+      <div>
+        <input type="button" class="btn btn-outline-light btn-lg px-5" value="Post updated Tweet" (click)="updateT()">
+      </div>
+    </div>
+  </div>
+</div>
+

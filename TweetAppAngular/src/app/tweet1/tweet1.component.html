@@ -1,0 +1,53 @@
+<app-header></app-header>
+<body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<section class="vh gradient-custom">
+<div class="container2">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-4 mt-md-4 pb-2">
+
+              <h3 class="fw-bold mb-2 text-left">Hi <i>@{{uname1}}</i></h3><br>
+              <p class="text-white-50 mb-2">{{warnmsg}}</p>
+              <div>
+                <textarea type="text" [(ngModel)]="tweet" name="tweet" maxlength="144" class="form-control form-control-lg" id="tweet" placeholder="Write your thought!!!" required></textarea>
+              </div>
+              <br>
+              <div>
+                <input type="text" [(ngModel)]="tag" name="tweet" maxlength="50" class="form-control form-control-lg" id="tweet" placeholder="Add hashtags,tags(Optional)">
+              </div>
+              <br>
+
+              <div>
+                <input type="button" class="btn btn-outline-light btn-lg px-5" value="Share Tweet" (click)="tweetingtweet()">
+              </div>
+            </div>
+          </div>
+        </div>
+      <br>
+      <div class="container1" *ngFor="let a of tw">
+        <div class="card text-left">
+          <div class="card-header">
+            <p class="fw-bold mb-2 text-left"><i>@{{a.uname}}</i>{{like1}}
+              <span style="float:right;"><button type="button" *ngIf="this.uname1 === a.uname" class="btn btn-sm" (click)="deletetweet(a.tid)"><span *ngIf="this.uname1 === a.uname" class="glyphicon glyphicon-trash"></span></button></span>
+            </p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{a.tweet}}</h5>
+            <br>
+            <button type="button" class="btn btn-sm" (click)="replyT(a.tid)"><span class="glyphicon glyphicon-comment"></span></button>
+            <button type="button" *ngIf="this.uname1 === a.uname" class="btn btn-sm" (click)="updateT(a.tid)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button type="button" class="btn btn-sm" (click)="dlikes(a.tid)"><span class="glyphicon glyphicon-heart"></span></button>
+            <span *ngFor="let b of lik">
+              <small *ngIf="a.tid === b.tweetid">{{b.likescount}}</small>
+            </span>
+          </div>
+          <div class="card-footer text-muted">{{a.date | date : 'dd MMM yyyy, h:mm a'}}</div>
+        </div>
+        <br>
+
+    </div>
+</div>
+</section>
+</body>

@@ -1,0 +1,80 @@
+<!-- <div class="container">
+  <body>
+    <h1>Tweets {{rname}}</h1>
+      <h1>{{message}}</h1>
+      <h1>{{tweet1}}</h1>
+      Post tweet
+      <form>
+        <div>
+          <input type="text" [(ngModel)]="reply" name="tweet" id="tweet" placeholder="Give you tweet" required>
+        </div>
+        <div>
+          <input type="button" class="submit" value="Share Tweet" (click)="replytweet1()">
+        </div>
+      </form>
+      <br>
+      showing all tweets
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>UserName</th>
+          <th>Tweet</th>
+          <th>Date & Time</th>
+        </tr>
+        <tr *ngFor="let a of rep">
+          <td>{{ a.tid }}</td>
+          <td>{{ a.rname }}</td>
+          <td>{{ a.reply }}</td>
+          <td>{{ a.date }}</td>
+
+        </tr>
+      </table>
+      <div>
+      </div>
+  </body>
+</div> -->
+
+<app-header></app-header>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<section class="vh gradient-custom">
+<div class="container2">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-4 mt-md-4 pb-2">
+              <h3 class="fw-bold mb-2 text-left">Tweet From <i>@{{uname}}</i></h3>
+              <h4 class="mb-2 text-left">{{tweet1}}</h4>
+              <p class="text-white-50 mb-2">{{message}}</p>
+              <div>
+                <textarea type="text" [(ngModel)]="reply" name="reply" id="tweet" class="form-control form-control-lg" placeholder="Give your Reply" required></textarea>
+              </div>
+              <br>
+
+              <div>
+                <input type="button" class="btn btn-outline-light btn-lg px-5" value="Share Tweet" (click)="replytweet1()">
+                <p>{{showmessage}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <br>
+
+      <div class="container" *ngFor="let a of rep">
+        <div class="card text-left">
+          <div class="card-header">
+
+            <p class="fw-bold mb-2 text-left"><i>@{{a.rname}}</i></p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{a.reply}}</h5>
+            <br>
+          </div>
+          <div class="card-footer text-muted">{{a.date | date : 'dd MMM yyyy, h:mm a'}}</div>
+        </div>
+        <br>
+
+    </div>
+</div>
+</section>
+
+
